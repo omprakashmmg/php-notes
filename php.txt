@@ -1,0 +1,780 @@
+***************************PHP notes*****************************
+
+Basic concept related to programming.
+1.	How to create folder dynamically via date using cmd.
+- mkdir %date%
+2 concept1 a folder name can’t contain illegal character like \,/,?,*,””,|,:,<>
+2.	If while running the command mkdir %date% if you get an error, incorrect sysntax error
+3.	Make sure your date format does not contain illegal  character  \,/,?,*,””,|,:,<>
+
+******************First browsernetscape navigator**********
+
+******************First Search EngineYahoo **********
+
+Basic story:
+1.php is a our technology and php is a server side language.
+Q.. Why not php execute on the browser.?
+https://www.facebook.com
+file:///C:\Users\vikku shukla\OneDrive\Desktop\App2021\php\04-12-2021
+1.according to client server model.
+2.Any  thing which is loaded by client(browser) will be called as resource.
+
+Common terms used is webtech.-->
+1.human(End user)(request)
+2.God(server)(respose)
+
+End-user will use browser as a interface (plateform) to make a request by using url. 
+
+Ques..  How end user is going to make a request?
+using URL
+
+Ques. How many types of request are there?
+There  can be only 2 types of request.
+1 synchronous Request php,python,jsp,.net….ect
+2.Asynchronous Request Ajax,node.js
+
+Synchronous Request  A request in which one event  depends on other request to happen such type of request is called Synchronous request. These request are blocking in nature.
+
+For ex.
+1.	Jsalert();
+2.	Phpform submit
+Asynchronous Request A request in which one event doesn’t  depends on other request to happen such type of request is called Asynchronous request. These request are  non-blocking in nature. 
+Ex.-->
+1.node js----window.alert()
+      R1-----------------------------wait
+      R2---------------------------process---success
+    R3-----------------------------wait
+    R4------------------------------processsuccess
+
+2.Php     
+R1 --------------------wait
+R2---------------wait
+R3-------wait
+R4--wait
+  
+------------Mascot- logo of a technology---------------
+Php Mascot elePHPant
+Php designed by ----Resmus lerdorf
+Developerphp development team Zend Technology
+
+
+Date 5-12-21
+Getting started with laragon:-
+1.	while opening laragon screen you will called as laragon control panel.
+1 menu
+	  All the important.
+	Settings, logs, errors, initialization, configurations, related to apache, mysql, php will be listed here.
+	IMPORTANT FILE:
+1.	.ini-initialisation fileit contains all the important services permission, assets,utilities required  by any program during start-up.  Ex: php.ini,laragon.ini,mysql.ini,etc
+   		
+2.	.log  log files error files.-->it will contains all the runtime error /exception occurred during execution of the program.
+3.	It store the information with alerts status.
+                  1.success
+		 2.info
+		3.warning
+		4.danger(critical)
+Question
+.cnf of.confimportant file to run  www  This menu will open and show all the projects you will create any c:/laragon/www
+											| p1.php
+											| array
+
+1.	Server document root: it contains the system path
+C:/laragon/www
+  QUES”:-> what is document root of wamp?
+       C:/wamp/www	
+what is document root of Xampp?
+C:/xampp/htdocs
+2.	Explore Menu: it is used to open the existing project in explorer window.
+3.	Shere: used to share the resource with your team-mates connected to network.
+4.	Project Launcher[]it will lounch every project in url.
+5.	Quick App:
+     In PHP every project is a , APP;
+App can be classified[community-name] app
+For example:
+1.	Wordpress communitywordpress app
+2.	Laravel communitylaravel app
+3.	Drupal community drupal app
+4.	codeIgnitor communitycodeignitor app  or CI app
+…..
+….
+Etc
+Using quick app we can automatically, configure and install application.
+
+4.	
+
+Which server you are using?
+Apache server
+Apache arver is INSTALLED on laragon server,
+What is my current file name:p1.php
+Where this is stored:
+Inside c:/laragon/www inside laragon server where you are want to access p1.php
+From where you can acess this index.php
+From browser,
+Where index.php is stored?
+Inside c:/laragon/www
+                             | index.php
+ From where you can access this index.php
+From browser(client). Make the request
+url.(uniform resource locator):
+uri.(uniform resource identifier).:
+
+url has fallowing parts:
+url is the kind of web-address to some resource located at any server.
+url can be two type:
+1.Protocal  based-: uses ip address
+
+2.Non-protocal based:- uses ip address
+http:/localhost:80
+http:/[::1]:80
+http:/127:0:0:1:80
+
+ftp://
+http://
+https://
+smtp://--mail server
+ssh://--gitbase
+ssl://
+they all called web-driver(protocols)
+whatsapp://
+zoom://
+file:///  :-(///-system drivers)
+file://-:(web driver)
+uri syntax-:
+[protocol_name]://<sub domain>/<domain>/<host>:<port>/<resource-name>
+
+World internet handling service-:IEEE
+Web handling-:w3c(world wide web consortium)
+Client----------------------------request---------------------------server
+----------------------------response-----------------------------
+|-----------------------------medium(internet)---------------------
+|layer -1 |layar-2||layar-3|layar-4|layar-5|layar-6|layar-7
+
+  
+Case 4-:
+Laragon (server)web-interface-:
+Server—on
+Php –apache-on
+Mysql:on
+Make the request using browser ,for hthp://localhost:<apache-port>
+http://localhost:80
+
+quick open using cmd
+window+R
+type cmd  hit enter
+start chrome.exe localhost
+
+haw many ways you can execute the php code
+1.php cli mode
+(i)laragon terminal
+(ii)git-bash
+(iii)cmd/pawershell
+(iv)php interactive mode php REPL php>
+Haw to lounch php repl mode
+ Open cmd type php –a;
+Php>without opening and closing of php tags but; is mendatory.
+C:\Users\om prakash yadav>php -a
+Interactive shell
+
+php > $x='omprakash';
+php > echo $x;
+omprakash
+php > 
+note::php –a and php –s are called as commond line argument;
+on supplying these arguments the program starts executing in the same ,given environment.
+Php –v:virsion 
+Haw to see list of all argument
+Php –a:interactive mode.
+
+Php –r: excute the code as readline.
+Ex-:C:\Users\om prakash yadav>php -r "echo'hi this is techpile technology';"
+hi this is techpile technology
+C:\Users\om prakash yadav>----
+
+Php –v:display the current virsion of php
+Php- –virsion:display the current virsion of php.
+Php –s:run the inbuilt cli server of php<@v php 5.6.2>
+Php –help,-h:run the help
+Php –m:loads all the important modules initialised   by php.ini. 
+Wap to run a php code as read line.
+*************************************
+C:\Users\om prakash yadav>php -r "echo'hi this is techpile technology';"
+hi this is techpile technology
+C:\Users\om prakash yadav>                                                                                                               
+2.php web mode
+  1.php cli server -- Php –s<url>:<any-port-no>
+  2.using laragon web interface.
+
+We have only two types program in programming language.
+1.with input.:addition of two input:
+2.without input :hello world:
+Haw to create our first input program in web interface.
+*************************************
+input feild :html form
+1.create html form
+2.add any on of field you require.
+3.add a submit button
+4.add form tag,with action,and mothod="GET"and metho="POST";
+5.add the server-side page url which is goning to handle the request the server-side.
+
+
+6.fill the form and hit on submit button
+7. you will not found 404 error. becouse resource does not exist.
+
+8.create server side page, which can handle,client request process data and give the respose.
+9.use the supar globle variable of php to accept the request\ $_Request to handle the form 
+feilds.
+
+10. since, $_REQUEST is a ,array,it has a key as name and feild attribute,in htmlform and use 
+echo stetement to display the output and after words comment it.
+11. note that,add id and name attribute on html form to handle each form control on server-side.
+concept:this is concept is valid for all language jsp,python ,asp.net,and php also.
+ id--->for java script or client.
+ name---->for server side.
+ 
+ using cleint side validation on php.-:
+ **************************************
+ what is validation and types of validation-:
+ 1.validating or restracting the user from entering the invalid data in the form feild is 
+ called validation.
+ 
+ 
+
+ 
+ client side:
+      front end language:(html,css,css3,less,sass,vanillajs(javascript),jquery,bootstrap,tailwinn
+  css,spg,jpg,images,fonts,icons,theame,widgrth,layout,other frmaworks of js (reactjs,Angular,
+  BAckbonjs,Emberjs,nextjs,redux,AngularJS,....,VUeJs))
+  
+  server side:
+  back end language includeing database.
+as-:
+(c++,go,Rust,c,Php,python,Ruby,R,NOde.js,expressjs,java(jsp,servelet),asp.net,scala,perl,...)
+
+data base-:
+SQL based database (structered database)  .
+1.oracle
+2.mysql3
+3.SQLite.
+4.mariaDB.
+5.MS SQL.
+
+unstructured data base:no -SQL database
+1.mongoDB
+2.dynamo DB
+3.couchDB
+4.redies
+5.postgrelsql
+6.firebase
+8.s3(simple storege service) bucket(AWS).
+ 
+ 
+  most confusing qustion-:
+ the diffrence between validation ,authentication,authorisation.
+ 
+ 1:validation-:
+              validation will prevent server from, provoiding invalid data or uploading illigle 
+			   file formet in the  database or server by the user.
+	for example-:
+	enter the name-:12345654 invalid valiadtion process
+    upload pic:upload bahubali.mp4 2gb only 20kb file allowed.
+	                       invalide file---->process--->validation.
+		incase of validetion there is no involvement of database.
+		
+		validation:js:client side.
+		validation:php:server side.
+		
+		for validation always do server side,or both side,
+		
+		both side: both side validation should be done,becouse there may be ,chance 
+		that user may have block his java script or disable the javascript.
+		 
+		 
+		 interview qustion-:
+		QUS1:-
+		making email id unique for each ragistration is example of ?
+		ans:authentication why?
+		becouse user email will be checked from database.
+		
+		note-:
+		incase of validation either from client side and server side logic will be involved in 
+		not,database.
+		
+		but,checking the formet of email is validation.
+		omprakashyadav5257@gmail.com--->format match--->pattern-->pattern matching.or regular
+		exepression.
+						 
+2.Authentication-:
+cross checking the identity of existing user from database is called as authentication
+such type of feature is used in case of 
+
+login,Email verfication,unique eMail,forget password,google login,fb login,github login,linked in 
+login,otp verification ,otp login...,itc.
+
+QUS1:
+captcha((c)completely (a) automated (p)public (t)turing test to tell(c) computer and
+(h)humaen (a)aparts) is which type of validation.
+
+ans-:
+it is always server side.it involeveld session is storage which is process server side only
+--->session data that is already encrypted.
+
+3.authorozation-:
+ authorozation refers to permission ,given to authenticatied user.
+ onec the user is valid then it may have few permission or may not have any permission .this concept 
+ is authorozation.
+ 
+ 
+ for eg:
+ i can ragister in pannel---> login in there (authenticaticeted)
+ --->loggind--->i cannot see any course(autherised for any course).
+
+for eg2:
+users are two type-:
+1.trial user.-->10 faeture.---non-autherised.
+
+2.preimieum.---->20 feature---autherised
+
+type of authorization-:
+1.no authorization(user--->role)
+2.fully autherized(super admin--->role).
+3.partially autherized (admin--->role)
+
+roles and permission is kind of authorization.
+
+eg:
+school erp(enterprise resource planning).
+1.teacher
+        |add attendance
+		|view attendance
+2.student
+        |view attendance
+ here ,student cannot add attendance ,becouse student is not authorized for ,adding attendance.
+ 
+
+in order to take input on console window or cli mode,
+we need a scanner .php file where we define input() function.
+
+explaination of input () function inside scanner.php
+**************************************************
+in order to understand this, haw input function works,
+fallowing concepts are required
+
+1.use echo stetement.-:
+  we can use echo stetement for printing value the string value,any variable value or, any constant
+  litrel.
+  as-:
+ php > echo 'hello world';
+hello world
+php > echo "hello ram!";
+hello ram!
+php > echo 10; //constant literal.
+10
+php > $x=10;
+php > echo $x;
+10
+php > echo true;
+1
+php > echo false;
+php > printf("%d",false);
+0
+php > echo '';
+php > echo json_encode('');
+""
+php > echo json_encode(false);
+false
+php >      
+php > echo PHP_EOL;
+
+php > echo json_encode(PHP_EOL);
+"\r\n"
+qus-:
+php > $x=(false=='');
+a)1
+b)0
+c)
+D)non of these    
+ans-:1
+explain-:
+== compair containt. 
+
+qus 2-:$x=(false===''); 
+a)1
+b)0
+c)
+D)non of these  
+
+ans-:c.
+explain=
+false is contain false becouse false is boolian false and ''/ is string false but datatype is not 
+match so it is false 
+php > $x=(false==='');
+php > echo $x;
+php > echo (int)$x;
+0
+php > echo json_encode($x);
+false
+php >  
+note-:
+for known datatype-: echo getType($x);
+echo return type=string.
+
+echo will evaluate ,the ,expression as string.
+lower conversion:int.
+upper conversion:string.
+
+array to conversion string-:
+php > echo [10,20,30];
+
+Notice: Array to string conversion in php shell code on line 1
+Array
+php > echo join ([10,20,30]);
+102030
+php >          
+php > echo implode('',[10,20,30]);
+102030
+php >  
+php > echo null;
+php > echo json_encode(null);
+null
+
+qus2:-null==false;
+ans-:
+1,valid/true;
+qus3-:null===false;
+ans-:
+false,boolian false.
+qus4-:echo(0=='');
+ans-:1 /true.
+qus-:echo(0==null);
+ans:-1 true.
+qus-:
+php > echo(0==null);
+1
+php > echo(null==0);
+1
+php > echo (0==false);
+1
+
+note-::(type casting)
+null==0==false==''==true==1
+=== we can find the diffrence.
+                                                                                                                                                                                                                        
+STDIN-:standard input.
+STDRER-:standard error.
+STDOUT-:standard output.
+  
+  
+2.driver protocal[protocal]:-[//]-:
+         php support list of driver protocal
+		 there are also called as wrapper ,or schem in the php.
+12.  file://-:  accessing local file system.
+1.   http://-:  accessing HTTP(s)URLs.
+2.   ftp://-:   accesseing FTP(s)URls.
+3.   php://-:   accesseing various i/o system.-:
+               it can handle any type of input and output 
+			   from any iterface .it can be terminal,it can be
+			   ui  (browser) based,or any third party(API)application programming
+			   interface. 
+
+             the meaning of-:STDIN-://  -: php://input 
+			 the meaning of-:STDOUT-://  -: php://output (5.6.2)or php ://memory<(5.6.-). 
+php:// -:
+    input is a read-only stream that allows you to read raw data from the request body. 
+	php://input is not available with enctype="multipart/form-data".
+
+php://output -:
+php://output is a write-only stream that allows you to write to the output buffer mechanism in the same way
+ as print and echo.
+
+note-:: that,these are used for raw input only (json input) from client request. 
+4.   zlib://-:  compression streams.
+5.   data://-:  data(rfc 2397).
+6.   glob://-:  find pathnames matching pattern.
+7.   phar://-:  PHP archive.
+8.   ssh2://-:  secure shell 2.
+9.   rar://-:   rar.
+10.  ogg://-:   Audio Streams.
+11.  expect://-:process interaction stream.
+
+
+3.returning from a function.-:
+        qus:1-:  write a program in php to show user -define function.
+		ans-: syntax-:
+		 function<any-function>($argument,$arg2,$arg3.....,)
+		 {
+		 //code stetement.
+		 }
+		 ex-:
+	<?php
+//user define function
+function wish()
+//declairation and defnition.
+	{
+	echo "hy! good morning...";
+	}
+	//calling function
+wish();
+		
+?>
+qus -2:
+wap in php to add two number using user define function.
+ 
+
+
+<?php
+ $no1=readline("enter the number first :");
+
+$no2=readline("enter the number second :");
+
+#echo add($no1,$no2);
+function add($no1=0,$no2=0){
+return $no1+$no2;
+}
+#printf("the result with 0 argument :%d \n",add());
+printf("the result with 1 argument $no1=%d \n",add($no1));
+printf("the result with 2 argument $no2=%d \n",add($no2));
+printf("the result with final result =%d \n",add($no1,$no2));
+
+?>
+  
+  
+   using return keyword inside function the function should return a value  we ahve alredy see 
+   in add function.
+		 
+		 
+4.concept-of user-define function.
+5.using defoult argument in a function.:-
+    if we want to make argument optional (can pass or cannot pass) in that case define a defoult 
+	value to the argument in function declairation and defnition 
+	 as-:
+	 
+	 function add($a,$b=0){
+	 
+	 }
+	 
+	 
+	 $a:mendatory argument.-:
+	     the arguments which are compalsory.
+	 $b=optional argument.:-:
+	      the optional are arguments have a defoult  a value ,which makes the optional , such that if
+		  we pass the value $argument take the assigned value ,if not ,if is going to use the default 
+		  value.this makes these argument (parameters,inputs)as optional argument.
+6.file-pointer and file handling.
+7.input output buffer or I/o streams.
+8.using trim() function.
+
+QUS:- do you support inbuilt,console input function.
+ans-:
+yes, readline() is predefine function used take input.
+
+wap in php to perform addition of two numbers using readline() method in cli.
+*****************************************************************************
+ans-:pawersell mode-:
+start notepad++ p3.php
+
+$no1=readline('Enter first number :');
+$no2=readline('Enter first number :');
+$sum=$no1+$no2;
+printf("the sum is %d",$sum);
+
+output//-:
+C:\laragon\www\app-2021\cli>php p3.php
+Enter first number :12
+Enter first number :13
+the sum is = 25
+
+cli mode -:
+C:\laragon\www\app-2021\cli>php -a
+Interactive shell
+
+php > $name=readline('enter first name');
+enter first name12
+php > $name2=readline('enter second number:');
+enter second number:13
+php > $res=$name+$name
+php > echo $res;
+25
+
+ex 2:-
+
+
+php >                                                                                                                   
+C:\laragon\www\app-2021\cli>php -a
+Interactive shell
+
+php > $name=readline();
+techpile
+php > echo $name;
+techpile
+php > $name=readline('enter the name :');
+enter the name :techpile
+php > echo $name;
+techpile
+php >                                                                                                                   
+
+
+
+
+note -:
+cli clear commond-:echo "e/[H/e[j]]";
+
+
+
+QUS-:what is the use of fgets
+*******************************
+fget allowed you read the data from any input resource .it internally uses .file pointer.
+by default it can read 1024 chrecter at a time from input buffer.
+
+the fgets can read any number of charecters from,any file or resource before EOL(end of line).
+ex-$txt=fgets($file name,1024//charectore read define);
+
+ note-::
+EOL-:end of line.
+EOF-:end of file. 
+fgets accepts two arguments.
+case 1-:
+fgets concept two argument 1.
+                  resource handler this can be a wrapper ,scheme, file pointer.
+ 2. buffer_size-: 
+                 no of memory blocks reserved for,input charecters stream.
+it works like a link list.
+where 0:address
+      1:base data: header data:header node.
+	  2:other nodes.
+	  
+	  if buffer size not supplied :defoult 1024.
+	  if buffer size ==0:false.
+	  if buffer size ==1:false.
+	  if buffer size >1 :charecter bit reserved in memory block headed (pointed by)by base node.
+	  
+
+ 6-:file pointer-:
+      file-pointer is special variable thet store refrence to memory alloaction of any file,
+	  $fp=fopen('anyfile.txt','mode')
+	  
+	   here $fp acts a file pointer which is pointing to the refrence address of anyfile.txt.
+       $fp is also called resource handler.
+	   file handling:-
+	            performing i/o oprations on the file to store data permanently in the file system
+				of os is called file.
+
+7-:input output buffer or I/O streams-:
+whenever we are going take input from standard input devices 
+it is electrically converted into digital signal and stored in buffer BIOS.
+ which can, used by ,kernal (core of os) to internally use this output and input values.
+ 
+ I/b-:input buffer -: store all bainary from of inputs teken from input devices which arev digitally
+  converted from a anolog signal from of current.
+
+O/B-:output buffer-:store all bainary from of output and calculations of calculeted by ALU and sent to p1
+primary momory which is then stored at output buffer which can be transfered to ,any output device.
+
+
+getch()-: in c language getch stetement is non-buffer stetement.
+Qus-:
+
+8-:using trim() function :-
+    it truncates,the  extra spece ,and new line chareter from a input string .
+
+
+variable($) and reference($$) to variable or variable to variable reference in php-:
+************************************************************************************	
+1.variable is kind of identifier ,used  for storing the constent litral.
+a vriable is also a reference to memory.
+
+ what is identifier?
+ ans-:the name is given to anything is called as identifier.
+ example-:it can be function name,class name,variable name,
+ user defineed naming convented is called as identifier
+
+Qus-:
+<?php
+class test{
+private $a;
+private $b;
+public function dance($msg){
+printf("the dance function");
+return $msg;
+}
+} 
+?>
+ans-:5,identifier;test,private,dance, public,msg.
+
+variable syntax-:
+$<variable_name>=<value>;
+ ex-:
+ $x;
+$y=10;
+echo $y;
+
+rules for making variable and identifier-:
+********************************************
+1.total valid.-:
+2.total_valid.-:
+3.total123 valid-:
+4.123total invalid.
+5._123total valid.
+6._total valid.
+7._123 valid.
+8.total_123 valid.
+9.total 123 invalid.
+10.is_password valid.
+11.is password invalid.
+12._total is valid
+13. TOTAL valid.
+14.TOTLE_ is valid 
+
+
+ alphanumeric_(underscore valid)but numericalpha_ invalid.
+ 
+ 
+ allowed charecter:a-z,A-Z_,
+ (0-9)(1th,nth);} position where is not allowed  at 0 index.
+ 
+ special charecter can not be used other than $and $$ only at first index for variable naming convention.
+ NOTE-:
+ in php variable names are case sensitive.
+ 
+  it diffrent and $name is diffrent and $NAME is diffrent and $Name is diffrent and $NaMe is different.
+
+ a variable can hold any type of values depending on the data-type.
+ for ex-:
+ 1.a variable can hold numerical value like int,float.
+ 2.a variable can hold boolian value like true ,false.
+ 3.a variable can hold collection of value like array
+ 4.a variable can hold a value like empty or nullable value.
+ 5.a variable can hold resource like mysqli resource object.
+ 6.a vriable can hold a string value b/w '',"",heredoc,newdocs.strings.
+ 7.a variable can hold a object or instances.
+ 8.a variable can hold context of super gloable (also called as super globle variable).
+ 
+ php devloper (resmos redarff.)
+ QUS-:
+ what is renge of floating character length?
+ ans-:16;
+ 
+ note-:::
+    what is diffrent b/w json_encode and json_decode?
+	json_encode : php native data-type to json native(self-data type) reprentation.
+	the data representation is completly ,raw.
+	
+	json_decode::
+	  json representation convert to php native data type  raw data php data-type.
+	  
+	  note-:
+	  1.var_dump(0==false);//type is optional matched content .
+	  2.var_dump (0===FALSE);   //content and datatype matched=false.
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
