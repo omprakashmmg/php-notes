@@ -1,0 +1,812 @@
+1-mangaled super global variable-:
+are the variable whose naming convention is such that ,they are declered using $ but have _ at
+ prefix.
+
+2-non-mangaled super global variable-:
+are the variables whose naming convention is like normal variable and use no special prefixing
+ like- or _ they can be treated as normal variable in case naming convention only.
+
+for eg:
+$namr,$class.$GLOBALS,$argc,$argv,$http_response_header,$php_errormsg.
+
+waht is diffrence between normal variable and super global variable-:
+1.super global variable predefined but normal variable are user defined.
+2.sgv ,have global scope and normal variable have local scope.
+3.normal variable do not have concept called name mangaling but super global variable have.
+
+note::
+      sapi(service/system application programming interface).
+	  cgi(common getway interface)/(web mode).
+      cli(commond line interface).	 
+	  
+	  
+$GLOBALS:-both SAPI(cgi+cli).
+$_GET:both SAPI(cgi+cli)but enviroment dependent.
+$_POST: SAPI(cgi)/(web mode)
+$_FILES:SAPI(cgi)/(web mode)
+$_COOKIE:SAPI(cgi)/(web mode)
+$_SESSION:SAPI(cgi)/(web mode)
+$_REQUEST:SAPI(cgi)/(web mode)
+$_ENV :both SAPI(cgi+cli).//env (enviroment)
+
+other super global variable-:
+$http_response_header:CGI(COMMON GATEWAY INTERFACE)
+$argc: SAPI-:CLI (COMMOND LINE ITERFACE)  //argument count.
+$argv:SAPI-:CLI (COMMOND LINE ITERFACE) //argument variable.
+$php_errormsg:both SAPI(cgi+cli).
+
+what is SAPI?
+
+ans-:SAPI  stand for server /system application programming interface. it is a type of service, which 
+recognises the environment in which execution of the program takes place.
+
+this service is, gandle by web-server . 
+
+wap php to show diffrent sapi name at diffrent environment.
+ans-:consider sapi.
+
+<?php
+echo php_sapi_name();
+
+?>
+
+output-:
+1.php sapi.php //cli
+2.php -s localhost:8000 //cli-server.
+3.apache (laragon) //apache2handler
+
+what is sapi of $name="ravi";
+a)cgi
+b)cli
+c)both(correct).
+d)this is not super global variable.
+
+2)what is correct value for $argc when you are running it at url:https:/localhost/p1.php?
+a)1
+b)2
+c)0  (correct)
+4)3
+commond line arguments in php -:
+********************************
+in any programming language, there are two types of inputs environment.
+1.runtime input-:inputs and argument supplying during programm execution is called runtime argument.
+
+for example-:
+scanf(),getch(),gets(),getchar(),
+
+you can take input from these function ,or you can supply the input ,in these only when program is 
+running in program primary memory.
+
+ 2.compile time input or arguments-:
+    the arguments supplyied at compile time of the programm is called as commond line arguments.
+
+ in php we have to super global variable for this 
+1.$argc :(argument count). 
+2.$argv:(argument vector or  argument variable).
+
+3.they will work ,under only sapi mode =cli.
+
+
+the properties of commond line argument-:
+1.the commond line arguments which are the argument which suplied at compile time .
+2.$argv : argunment vectore is responsble to accepting the arguments, 
+at compile-time.
+
+3-$argc : hold the number of count or number of variable arguments suplied ,
+4. the type of $argc :is int type.
+5. the defoult size of $argc =1.
+6.the size of $argc =(n+1)where n is the no of arguments.
+7. $argc and $argv both work only under sapi ==cli mode.
+8.$argv and $argc are the super global variables according to the php stantard  in, 
+the super global variable also they belong to ,catogry of non-mangled super global variable.
+
+
+9.$argv is a homogenous array.
+****************************************
+
+note-:in genral in any programming language array are collection of constants litrals,
+
+it was fallowing classifiction.
+1.on the basis of data.
+    (a).same and same : homogenous.
+	(b)diffrent type : hetrogeneous.
+	(c).mixed type :hetrogeneous.
+2.on the basis of dimention.
+   (a)1-D array(single dimention ,linear array).
+   (b)2-D array (multi-dimention array)
+   (c)3-D array (multi-dimention array).
+   (d)n-D array (multi-dimention array).
+3.on the basis of structure /nature.
+   (a).index array.
+   (b).mapped array (key and value pair).
+   
+    note::-
+	there can be n of names ,for the mapped array.
+	for eg-:
+	
+	python--->dictionary.
+	java---->hashmap
+	c#----->hasharray.
+	javascript--->array of object.
+	php---->associative array.
+	c++---->vectore array.
+	.........
+	...........
+	
+
+	********************************************
+	$argv : is always homogenous.
+	
+10.$argv has homogenous type as string array . that is(.i .e) is why it is also,string vectore.
+
+11.the $argv support ssv only(spece sepdated values).
+12.the data type of each element either ,float ,or,int or,boolean ,or array everything is converted
+ to string only.
+13.if you want supply speced charecters then we neeed to use "" .otherwise it will make all 
+spece sepdated values as diffrent argument.
+14.the indeex 0 is always file_name.
+15.even though php is is dynamic language ,in commond line arguments it is stricted to string
+type ,this is becouse 0 the element index is a file name which is string value ,due to which
+the entire elements of diffrents datatype are implicityly converted to ,string datatype.
+
+ write a program to find sum all the arguments supllied from commond line.
+ and avrage.
+ 
+ hint::$srgv and $argc =count($argv).
+ $avg=$sum/($argv-1).
+ $sum=0;
+ $sum=$sum+$argv[i].
+  
+  wap to make anonymous script in php?
+  what is meaning of anonymous script?
+  1. let us ,consider scenorio p1.java--->what is family name of this program--->java family
+  (.java extaintion).
+  p2.py---->phython(.py extaintion).
+  p3.php ---->php family(.php extaintion)
+  
+  by looking at the extaintion only  we can identify,family or type of script.
+   a file without extaintionare called as anonymous file. and such file are recognises as file <filename type>
+   
+   
+   why this concept is required-:
+   codeignitor-:spark---->php.file.
+   laravel :artisan --->php file.
+   zwave---:zwave-->php file.
+   this is used so that we can hide our ,real code without allowing os ,to identify the file type.
+
+working with anonymous script ?
+
+ans-:unnaned type file is called anonymous script.
+
+ variable to variable refrence in php ($$)-:
+ *******************************************
+ creating the variable from the  refrence of existing variable. it is denoted by $$.
+ 
+ use of this concept can be found in, codeignitor ,laravel .yii,frameworks, where we want to pass the data 
+ from controller to view.
+ 
+ 
+ constants in php-:
+ *************************
+ constants is are the identifier which are responsple to hold single value if we try to assign new 
+ value it will genrate error.
+ 
+  or
+   the identifier whoes value ,remains constants through out the execution of the is called as constants
+   
+   there are two type of constants-:
+   1.predefined :in php there are 1800+ predefined .
+   2.user-defined : user can create there own constants.
+   
+   
+   pre-defined constants-:
+   ************************
+   get_defined_constants(): list of all pridefined constants.
+   important predefined constants.
+   *************************************
+ 1.PHP_EOL.-:new line
+ 2.PHP_VIRSION.-:return virsion
+ 3.TRUE-:return 1
+ 4.FALSE-:return nothing
+ 5.NULL-:return nothing
+ 6.PHP_SAPI-:return the sapi name (cli|cli srver | apache2handler).
+ 7.PHP_OS -:return extaintion.
+ 8.PHP_OS_FAMILY.-:return os name.
+ 9.STDIN-:return the resource object of stantard input.
+ 10.STDOUT-:return the resource object of stantard output.
+ 11.STDARR.-:return the resource object stantard error
+ 
+ error level constants:16
+ ***************************
+ 1.E_ERROR
+ 2.E_RECOVERABLE_ERROR
+ 3.E_WARNING
+ 4.E_PARSE
+ 5.E_NOTICE.
+6.E.STRICT 
+7.E_DEPRACTED.
+8.E_CORE_ERROR
+9.E_CORE_WARNING
+10.E_COMPILER_WARNING
+11.E_USER_ERROR
+12.E_USER_WARNING
+13.E_USER_NOTICE
+14.E_COMPILE_ERROR
+15.E_USER_DEPRECATED
+16.E_ALL
+
+  Error tree-:
+  ************
+ 
+ ERROR
+      |   
+   1- STRICT                                      2- non strict(recoverable error)
+	  ( unrecoverable Error)                        ( warning)
+        1.compile                                          1.notice
+		2.parse error.							           2.warning
+		
+        <-------------------two type------------------------>
+                        1.core (pre-defined error)
+                        2. user (user-defined	error)
+                        3.derecated error.
+
+
+haw to create the user define constants-:
+*******************************************
+1.procederal:-
+         
+		 syntax-:syntax of procederal user define constants
+		 ****************************************************
+		 
+		 1.define('<identifier name>','<value>',<case-sensitive-boolean>);
+		    these constants have global scopes. and can be access any-where.
+			
+			for e.g.-:
+			define('gravity',10);
+			echo gravity;
+		 
+2.oops: incase of interface,and abstract class.
+
+ property of constants-:
+ *************************
+ 1.by default the declaration of constants are atomic,(declaration once) andcase-sensitive.
+ 2.the scope of constants are global.
+ 3.the constants can not be redeclaired.
+ 4.if we want to make in-case-sensitive constants we  need to set 3rd argument in define as :true.
+ 5.the in-case sensitive,constants were deprecated in virsion 7.x ,but feature is already supported.
+ and in 8.x these feature is again supported .
+ 
+  note-:
+    during this concept we have two type error raised,
+	1: E_DEPRACTED:- reserved pre-defined stantard of PHP.
+	2:E_USER_DEPRECATED:-reserved for user-defined deprecated error.
+	
+	working with string literals in PHP-:
+	***************************************
+	
+a variable in php can hold any type of strings value ,but in case of output string ,then ,there is vast(brode)
+diffrence b/w  '' and "" and it's combinations.
+
+these combinations are invalid.
+1. '' inside ''. :invalid
+2."" inside "".  :invalid.
+
+ thease combinations are possible-:
+ *************
+ 1. '' inside "" valid.
+ 2. "" inside '' valid.
+ 3. '' inside `` valid.
+ 4. "" inside `` valid.
+ 
+  note-:
+   `` tick can be inside can be inside '' or "" qoutes only.
+   
+   
+    type of output strings-:
+	************************
+1.Raw string-:(single qoutes) 
+any string wrapped inside '' will be raw string.
+in this case ,escap charecter sequence like,\n,\t,\f,\v,\r,\a,\b are npot process and variables value are 
+not processed.
+2.processed string-:(double qoutes)
+ in case of processed, string every charecter within "" will be processed.
+any string wrapped inside "" qoutes are called as process string.and they will process. each and every special
+charecter like escap sequence \n,\t,\a,\v,\f,\r ,\b and variables will also be processed.
+3.hereDoc string:-
+4.newDoc string-:
+									  
+ 
+ 26/12/2021-:
+ ************
+ 
+  variable scope-:
+   in any program there can be only two type of scopes.
+   1.local scope.
+   2.global scope.
+   
+   1. a variable defined utside of the block is at global scope.
+   
+   2. a variable defined inside a function is at local scope.
+   
+ concept-:
+ 1.you can access only, local variable inside function.
+ 2.if we try to access ,global scope variableit will undefined.
+ 
+ 3.the local variable gets the memory allocation at local scope i e at  stack memory 
+  while global variable get the memory allocation at global scope ie at memory hence if you want the value of 
+  global variable it should be accessed from correct scope.
+  
+ 4. in order to access the global variable we declaire global <variablename1,variblename,varname3,....>;
+ in the first line of function before using the global .
+ 
+ eg.-:
+ function display(){
+ global $b,$c,$n;
+ $z=200;
+ echo $c;//global
+ echo $b;//global
+ echo $n;//global
+ echo $z;//local 
+ }
+ 
+ 
+ 5. since global variable is  at ,global scope if we  try to overwrite the value of global variable the overall
+ change is  seen ,in the entire program.
+    highly recommended to use , the variable at local but do not change the value at local.
+
+6. the core concept with ,local and global scope is that ,outside the function ,the variable occupies 
+global scope without global keyword.but inside function global scope require global keyword.
+eg-:
+for global scope outside the function.-:
+******************************************
+$a=200;
+echo $a;--->200
+function display(){
+global $a;--->200;
+echo $a;----heap---200
+}	
+	for local scope inside the function-:
+	*******************************
+	echo $a;  //undefined
+	function display(){
+	global $a;//---heap--->100
+	$a=100;
+	echo $a;---->heap--->100
+	}
+	echo $a;//---->heap---->100
+ 
+ 
+ 7.
+ 
+ 
+ 
+ artmatice operatore=:
+  note-:
+   incase case of division ,
+                               divisionit is divided into 2 type 
+							   1.float division-:(compleate division)
+							   2.int division-:(partial language)
+							   
+complete division dynamice taypedd language partial division ,strict type language/
+eg-:
+divided =divisior *Q+ re,(%)
+div-(divisor *Q)=rem(%).
+
+if language is strict type otherwise 
+
+conclusion-:
+
+
+ what is inval-:
+ intval is predefine function  typecast or convert one type of value of the integer value.
+ 
+ what is sprintf-:
+ sprintf stand for string printf it will return the output genrated by printf instead of printing you can hold it an variabble.
+ 
+ 
+  3-:using flooring concept-:
+ in mathmatices computation (calculation).
+ there is a concept of floor() and ceil.
+ 
+ floor-:
+ it will return lowest integer point value.
+ ceil-:
+ it will return incremented value of lowest intiger.
+ 
+ it truncates value of decimal part and return  a increamented lowest integer value.
+ ceil()= floor(n)+1 where n is floating point.
+ 
+ e.g-:
+ 2.4--->2---> lowest intiger.
+ 
+ note-:
+ when number is floating point then floor and ceil works.
+ 
+ note2-:
+ diffrence b/w floor and ceil-:
+  echo round(2.5)
+  >3
+  echo raound(2.4)
+  >2
+  echo ceil(2.5);
+  >2
+  echo ceil(2.4);
+  >2
+  
+  
+2.Relational operator.-:
+reletional are used for comparision.
+
+1.equality relation-:
+                  (i).strict equality-:
+                    a)a==b (value comparision).
+                    b)a===b (value with type comparision).
+                                       part-:
+                                      (ii)slack equality-:(compound equality)
+                                       (a)less equal to <=.
+									   (b)graeter equal to >=.
+
+2.in-equality relation-:
+
+                         two part-:
+                       a)unequal (.not equal).
+					   (i)(a)!=,(not equal).
+					   (ii)(b)<>.(never happen)
+                        b)strict in-equality.
+                          (i)>,<).
+				result will be always boolean true or false
+		
+	note-:exept ,slack equality all are simple relation.where slack equlity is compound relations.
+	
+3-:conditional operator-:
+are the part of ternaery opratore and called as short hand notation of if-else.
+
+<exepression or condition>?return <true> :return <false>;
+
+these are called ternary becouse of three oprands.
+  if exepression is true then return true will return false will return.
+  eg: $x=(a>2)?  "hi":"hello"
+  
+  echo $x;
+  
+  task-:
+  wap to find mod of given number without if else.
+  wap odd even .
+  3.wap to find +ve and -ve.
+  4.perfect number 
+  logic-:
+  perfect number=perfect number the number whoes sum of factor =number itself.
+  6---1,2,3
+      f1,f2, f3
+	  
+	  sum(f1,f2,f3,...,fn)=6.
+	  
+	  softwere-orecle virtual box,kali linux 64bit  dawnload.......
+	  
+
+  
+
+4-:logical operator-:
+	these are used to perform conjuction ,b/w two conditions.
+	 1.$$(AND) :match all the condition to be true(AND gate opration)
+	 2.||(OR)-match one or more condition to be true(OR gate operation)
+	 3.! reverse condition (NOT gate operation).
+	 
+	 
+	 &&
+	 ********
+	 A|B|A&&B
+	 ***************
+	 0 | 0 | 0
+	 0 | 1 | 0
+     1 | 0 | 1
+     1 | 1 | 1
+***************************
+
+       ||
+	 ********
+	 A|B|A||B
+	 ***************
+	 0 | 0 | 0
+	 0 | 1 | 0
+     1 | 0 | 1
+     1 | 1 | 1
+***************************
+
+        ||
+	 ********
+	 A|!A
+	 ***************
+	 0 | 1
+	 1 | 0
+***************************
+
+5.special operatore-:
+***************************
+php support few operators which are reserved for special purpose and are called as special operator.
+special operator have 
+
+1.modify operator
+  (a)pre modify  :--$i,++$i.
+  (b)post modify :$i++,$--.
+  qus-:
+ waht is diffrence b/w $x+=1,$x=+1,$x++
+ ans-:$x+=1 is increment by 1 and $x=+1 is assignby +1 and $x++ another form of increament is called post 
+ increament.
+2.
+refrence operator (&): in case of call by refrence
+3.string operator(concatention operator)-:
+use to cancate the values , together. we know that php nature dynamic.it will type cast  int values , value to 
+string for concatention.
+  since, concatention will be performed on the string datatype only hence called as string opratore.
+  
+  note-::
+  php allows mathmatical evaluation only afer using () .otherwise non-numerice encounterd error will be
+  thrown.
+  
+  qus=difrence b/w concate operator and append operator.
+  ans=>
+ .=(string assign ment oprator used once ,concate operatore) 
+ .=(string assign ment oprator multiple times used  ,concate operatore) 
+  
+ (a)concatention 
+ (b)append  operation.
+ 
+ qus-:
+ wap in php to makes userdefined string_repeat function whitch repeat the string n of times 
+ string_repeat('hello').
+ str_multiply('h',10)---->hhhhhhhhhh
+
+4.array operators.
+*******************
+[]-->subscript operator/index operator/key operator
+
+in order to declaire the array we can use [] subscript operator.
+we can use few mathematical operation to perform array operator.
+  1.union of array (+)
+  note-::
+  subscript unique= add 
+  subscript duplicate :over-write
+  latest value ,will be be stored
+  
+  note2=::
+  over -write duplicate and insert the unique{total array=extra element + replece elements}
+  2. slack equality of array/value equality(==).
+  3.strict equlity of array(value and type(order) equality) or identity operation :(===)
+  4.not equal array  :(!=)
+  5.unidentical array operation : (!==).
+6.bitwise operator-:
+**********************
+   1.modern operators-: (&&---> ||--->or  ^(xor)--->Xor.
+   2.nullcoalescing operator.:(??)
+   3.flagship (space-sphipe) operator.
+7.assignment operator.-:
+***********************
+   it is used to assign the value of evalueated  expression from right to left
+   e.g-:
+   $sum=$sum+n;-------->sum+=n;
+   $sum=$sum*n;-------->sum*=n;
+   $sum=$sum/n;-------->sum/=n;
+   $sum=$sum%n;-------->sum%=n;
+   $sum=$sum.n;-------->sum.=n;(concatention string).
+   
+   what is diff $ and $$ or ? and ??
+   
+   
+   flow controls in php-:
+   *****************************
+   what is the flow coltrols in programmin-:
+    flow controls means haw you programm will execute in primary memory ,at runtime.
+	
+	what is normal execution of the program?
+1.there are two approches of the normal execution of the program 
+
+(a) top to bottom approach.:-
+*******************
+the program will start very first line of the program and end/stop at line then it called as normal example-
+execution of the programm in top-bottom approach.
+
+haw many ways we can control it-:
+
+
+1.decision control block :-
+***************************
+ it allows the user ,to control the execution of specific line of code.
+ 
+part of decision controls-:
+                 1.selection block
+				 2.condition block
+				 3.Nested conditional block
+	
+note-:
+stetement :lines or peice of code inside the block ,and structure wrapping  those line of stetement is 
+called as block.
+2.return block-:
+******************
+
+3.loop stetement-:
+*************************
+4.jump stetement(blocks):-
+******************************
+
+(b)left to right-:
+**********************
+using operator  whenever a an expression is solved ,it will be solved,it will solved from left to right
+but if we want control the normal execution ,we can modify it to write to left.
+
+ this can be done by using operatore.
+ operatore will utilise,associativity and precedence order to achieve this.
+ 
+ 
+ e.g-1-:
+ 2+2+2-1   left--to--right.
+ 
+ $x=2+2   right-left(= operator associative l->r)
+ 
+ execution (l->r)
+ 
+ echo "the result is =".10+20;        l->r
+ error:non-numeric encounterd error ,becouse . has highest praority then +/-.
+ 
+ if we use () parenthesis.
+ execution   R->L
+ echo "the result = ".(10+20);
+                         ^
+				l->r   --|
+				
+				step:- echo ""the result =".30;
+				^
+				|-->l->r
+ 
+ selection block-:
+ ******************************
+ 1.switch stetement-:
+ ************
+ when we have multiple cases ,and we want to execute , a given case then we go for ,switch   block(stetement).
+   
+2.switch stetement are considered to be best alternative , of else-if ladder.
+ 
+  switch are of two types-:
+   *************************
+   1.unchained switch.-:
+   2.chained switch.-:
+   genreal syntax of switch block-:
+   ***********************************
+   switch(<evalueated exepression>){
+   
+   case <value-1> :
+   //stetement---1
+   
+   stetement...n;
+   
+   break;
+   case <value-2> :
+   //stetement---1
+   
+   stetement...n;
+   
+   break;
+   case <value-n> :
+   //stetement---1
+   
+   stetement...n;
+   
+   break;
+   default:
+   stetement---1
+   stetement---n
+   
+   break;
+   
+   }
+   
+   note-1:
+   exepression----evalueate------>result
+   
+   2>2 ---->true or false failed
+   
+   this exepression should be equal to one of case.
+   
+   haw to check type of charecter values-:
+   PHP provides ctype function from<ctype.h> header file.
+   *********************************************************
+   charecter=type string and lenght 1 and ascii value range in alphabets.
+   
+ctype_alnum — Check for alphanumeric character(s)
+ctype_alpha — Check for alphabetic character(s)
+ctype_cntrl — Check for control character(s)
+ctype_digit — Check for numeric character(s)
+ctype_graph — Check for any printable character(s) except space
+ctype_lower — Check for lowercase character(s)
+ctype_print — Check for printable character(s)
+ctype_punct — Check for any printable character which is not whitespace or an alphanumeric character
+ctype_space — Check for whitespace character(s)
+ctype_upper — Check for uppercase character(s)
+ctype_xdigit — Check for character(s) representing a hexadecimal digit
+
+
+
+
+chaining Effect in switch:-
+************************************
+
+ a switch stetement without any break is called as unchained switch and this effect called as chaining 
+ effect.
+ 
+ in order ,to break chaining effect in switch we use minimum one break, stetement.for each case block.
+ 
+ how to break the chain in switch-:
+ 1.exit:- terminate the entire program
+ 2.return :- it will return the execution from bootom to top.
+ 3.goto exit_label;  :- it will take the execution of the programm where ever we went .
+ 4.break :-break switch execution
+ 
+ QUS-:
+ what is order of execution of switch block with break stetement if condition = ($x%2) having sample spece={0,1}
+ defoult at (n+1) position.
+ ans-:0(1)
+ 1)0(1) ans
+ 2)0(2)
+ 3)0(3)
+ 4)0(4)
+  QUS-:
+ what is order of execution of switch block without break stetement if condition = ($x%2) having sample spece={0,1}
+ defoult at (n+1) position.
+ ans-:0(1)
+ 1)0(1) 
+ 2)0(2)
+ 3)0(3)
+ 4)0(4)
+ 5)0(n)ans
+  QUS-:
+ what is  max-order of execution of switch block without break stetement if condition = ($x%2) having sample spece={0,1}
+ defoult at (n+1) position.
+ ans-:0(1)
+ 1)0(1) 
+ 2)0(2)
+ 3)0(3)ans
+ 4)0(4)
+ 5)0(n)
+  QUS-:
+ what is  min-order of execution of switch block without break stetement if condition = ($x%2) having sample spece={0,1}
+ defoult at (n+1) position.
+ ans-:0(1)
+ 1)0(1) 
+ 2)0(2)ans
+ 3)0(3)
+ 4)0(4)
+ 5)0(n)
+ 
+  
+  type of label-:
+  *******************
+  1.empty label:-<label-name>:; it does not contain any , stetement within ,label bolck.
+  ex- exit_label:;
+  2.container label:- it is label block which will contain minimum one stetement.
+  
+  
+  ex- exit_label:printf("this is goto stetement");
+  
+  type of labelled block in switch stetement-:
+  ***********************************************
+  1.case blocks
+    **************
+	(i)inner case block
+	(ii)outer case block
+	
+  2.switch blocks
+  **********************
+   (i)inner default blocks
+   (ii)outer default blocks
+   
+   note-:: This is definition is optional .
+   
+   note:: this syntax is support in c language but PHP does not supported outer label blockes .
+   
+   the labelled blocks of allows only 256 cases as de-limiters(separator) for 8 bit complier.
+    similarly for n -bit total of number cases=2^(n) cases.
+	
+	note ::
+	using automatic script for , testing 
+	some times , in order to pleteform white box testing , foreach and every project , becomes very hactic
+	, so we can bbuild a autonomous bot script to execute the program according test cases.
