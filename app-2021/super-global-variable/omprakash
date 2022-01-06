@@ -1,0 +1,68 @@
+<?php
+//wap in php to show self cli
+echo "this is omprakash terminal";
+echo PHP_EOL;
+echo "this is omprakash framework :1.x";
+echo PHP_EOL;
+//print_r($argv);
+$commonds=['
+--help'=>'this is help commond',
+'--v'=>'1.x',
+'--a'=>'for addition',
+'--s'=>'for subtraction',
+'--m'=>'for multiplication',
+'--d'=>'for division',
+'--r'=>'for remainder',
+
+];
+echo PHP_EOL;
+foreach($commonds as $key =>$value){
+printf("%s\t\t :\t\t %s\n ",$key,$value);
+
+}
+$output='';
+if(isset($argv[1])){
+
+$command=$argv[1];
+
+echo "\e[H\e[J";
+switch($command)
+{
+
+case'--v':
+$output='1.x';
+   break;
+case '--a':
+$x=readline('Enter a Number 1:');
+$y=readline('Enter a number 2: ');
+$output =$x+$y;
+break;
+case '--s':
+$x=readline('Enter a Number 1:');
+$y=readline('Enter a number 2: ');
+$output =$x-$y;
+break;
+case '--d':
+$x=readline('Enter a Number 1:');
+$y=readline('Enter a number 2: ');
+$output =$x/$y;
+break;
+case '--m':
+$x=readline('Enter a Number 1:');
+$y=readline('Enter a number 2: ');
+$output =$x*$y;
+break;
+case '--r':
+$x=readline('Enter a Number 1:');
+$y=readline('Enter a number 2: ');
+$output =$x%$y;
+break;
+
+
+default:
+$output ='inavalid commond supllied';
+ break;
+}
+}
+echo $output;
+?>
